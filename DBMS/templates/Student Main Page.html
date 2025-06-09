@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .details p {
+            padding: 8px 0;
+            margin: 0;
+        }
+
+        .btn {
+            display: block;
+            width: 60%;
+            padding: 12px;
+            margin: 15px auto 0;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+
+        .marks-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .marks-btn:hover {
+            background-color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome, {{ values[1] }} {{ values[2] }}</h2>
+
+        <div class="details">
+            <p><strong>Student ID:</strong> {{ values[0] }}</p>
+            <p><strong>First Name:</strong> {{ values[1] }}</p>
+            <p><strong>Last Name:</strong> {{ values[2] }}</p>
+            <p><strong>Date of Birth:</strong> {{ values[3] }}</p>
+            <p><strong>Email:</strong> {{ values[4] }}</p>
+        </div>
+
+        <form action="/markpage" method="get">
+            <input type="hidden" name="stuid" value="{{ values[0] }}">
+            <button type="submit" class="btn marks-btn">View Marks</button>
+        </form>
+
+        <a href="{{ url_for('studentlogin') }}" class="btn logout-btn">Logout</a>
+    </div>
+
+</body>
+</html>

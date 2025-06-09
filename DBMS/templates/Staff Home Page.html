@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Home Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 18px;
+        }
+        .details {
+            text-align: left;
+            font-size: 18px;
+        }
+        .details p {
+            padding: 8px 0;
+            margin: 8px 0;
+        }
+        .btn-primary {
+            font-size: 16px;
+            width: 120px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome, {{ values[1] if values else 'Guest' }} {{ values[2] if values else '' }}</h2>
+
+    <div class="details">
+        <p><strong>Staff ID:</strong> {{ values[0] if values else 'N/A' }}</p>
+        <p><strong>First Name:</strong> {{ values[1] if values else 'N/A' }}</p>
+        <p><strong>Last Name:</strong> {{ values[2] if values else 'N/A' }}</p>
+        <p><strong>Department:</strong> {{ values[3] if values else 'N/A' }}</p>
+        <p><strong>Email:</strong> {{ values[4] if values else 'N/A' }}</p>
+        <p><strong>Address:</strong> {{ values[5] if values else 'N/A' }}</p>
+        <p><strong>Username:</strong> {{ values[6] if values else 'N/A' }}</p>
+    </div>
+
+    <form action="/staffstudentatten" method="POST">
+        <button type="submit" class="btn-primary">Attendance</button>
+    </form>
+
+    <form action="/staffstudentmark" method="POST">
+        <button type="submit" class="btn-primary">Marks</button>
+    </form>
+</div>
+
+</body>
+</html>

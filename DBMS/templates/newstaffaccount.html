@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Staff Account</title>
+    <style>
+        body {
+            background-color: lightgray;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            width: 380px;
+            max-width: 90%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 15px;
+            color: #444;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .btn {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #000;
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+        h1{
+        font-size: 22px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Staff Account</h1>
+        <form action="createnewstaffaccount" method="post">
+            <label for="staff_id">Staff ID</label>
+            <input type="text" id="staff_id" name="staffid" required>
+
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="firstname" required>
+
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="lastname" required>
+
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required minlength="6">
+
+            <div class="btn-group">
+                <button type="submit" class="btn">Create</button>
+                <button type="reset" class="btn">Reset</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .admin-container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h1 {
+            color: black;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: black;
+            font-size: 22px;
+            margin: 20px 0 10px 0;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        button {
+            background-color: white;
+            color: black;
+            width: 200px;
+            height: 50px;
+            font-size: 18px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: block;
+            margin: 10px auto;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: #ddd;
+            transform: translateY(1px);
+        }
+        @media (max-width: 500px) {
+            .admin-container {
+                width: 90%;
+                padding: 30px;
+            }
+            button {
+                width: 100%;
+                font-size: 16px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin Dashboard</h1>
+
+        <h3>Create New Student Account</h3>
+        <a href="/Stusignup"><button>New Registration</button></a>
+
+        <h3>See the Registration Number</h3>
+        <a href="/viewdata"><button>View Registrations</button></a>
+    </div>
+</body>
+</html>

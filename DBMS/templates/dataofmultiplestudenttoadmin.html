@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+    <style>
+        body {
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        table {
+            background-color: white;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            width: 120px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+                font-size: 14px;
+            }
+            th, td {
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Data</h1>
+    <table>
+        <tr>
+            <th>Reg No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>{{ student[3] }}</td>
+            <td>{{ student[4] }}</td>
+            <td>{{ student[5] }}</td>
+            <td>{{ student[6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button onclick="window.location.href='/returnfromadminstudentdata'">Return</button>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .admin-container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 {
+            color: black;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: black;
+            font-size: 22px;
+            margin: 20px 0 10px 0;
+        }
+        button {
+            background-color: white;
+            color: black;
+            width: 180px;
+            height: 50px;
+            font-size: 18px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #e6e6e6;
+            transform: translateY(-2px);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin Dashboard</h1>
+
+        <h3>Create New Student Account</h3>
+        <form action="/Stusignup">
+            <button type="submit">New Student</button>
+        </form>
+
+        <h3>Create New Staff Account</h3>
+        <form action="/staffsignup">
+            <button type="submit">New Staff</button>
+        </form>
+
+        <h3>See the Registration Number</h3>
+        <form action="/viewdata">
+            <button type="submit">View Registrations</button>
+        </form>
+    </div>
+</body>
+</html>
